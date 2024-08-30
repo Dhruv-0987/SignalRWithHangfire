@@ -1,0 +1,6 @@
+@SignalRWithHangfire_HostAddress = http://localhost:5273
+
+GET {{SignalRWithHangfire_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

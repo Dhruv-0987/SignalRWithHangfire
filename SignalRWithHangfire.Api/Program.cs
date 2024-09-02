@@ -9,6 +9,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSignalR();
 
+builder.Services.AddHostedService<NotificationService>();
+
+builder.Services.AddCors();
+
+builder.ConfigureHangfire();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,6 +47,11 @@ app.MapGet("/weatherforecast", () =>
     })
     .WithName("GetWeatherForecast")
     .WithOpenApi();
+
+app.UseCors(policy => policy
+    .AllowAnyHeader()
+    .AllowAnyOrigin()
+    .AllowAnyMethod());
 
 app.Run();
 

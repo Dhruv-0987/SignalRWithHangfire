@@ -1,0 +1,32 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@code {
+
+    private HubConnection? _hubConnection;
+    private const string ApiBaseUrl = "https://localhost:7182;";
+    private const string SendNotification = nameof(SendNotification);
+    private List<string> Notifications { get; set; } = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _hubConnection = new HubConnectionBuilder()
+            .WithUrl($"{ApiBaseUrl}/notification-hub")
+            .Build();
+
+        _hubConnection.On<string>(SendNotification, content =>
+        {
+            Notifications.Add(content);
+            InvokeAsync(StateHasChanged);
+        });
+        
+        await _hubConnection.StartAsync();
+        await base.OnInitializedAsync();
+    }
+}

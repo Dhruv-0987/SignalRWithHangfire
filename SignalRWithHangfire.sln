@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRWithHangfire", "SignalRWithHangfire\SignalRWithHangfire.csproj", "{B62C8B85-0A65-4869-BD1C-46A7339316DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRWithHangfire.Api", "SignalRWithHangfire.Api\SignalRWithHangfire.Api.csproj", "{B62C8B85-0A65-4869-BD1C-46A7339316DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{9B98538A-484A-480E-978D-CC4CB00344C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRWithHangfire.Client", "SignalRWithHangfire.Client\SignalRWithHangfire.Client.csproj", "{9B98538A-484A-480E-978D-CC4CB00344C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost", "AppHost\AppHost.csproj", "{2AB6A593-8AAA-4146-BF2F-91F250343214}"
 EndProject
